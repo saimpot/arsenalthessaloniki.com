@@ -1,4 +1,6 @@
 <?php
+const _THEME_NAME = 'wenger-lives-on';
+
 /**
  * Wenger Lives On functions and definitions
  *
@@ -142,6 +144,13 @@ add_action( 'widgets_init', 'wenger_lives_on_widgets_init' );
 function wenger_lives_on_scripts() {
 	wp_enqueue_style( 'wenger-lives-on-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'wenger-lives-on-style', 'rtl', 'replace' );
+
+	// Main css file
+	wp_enqueue_style(_THEME_NAME . '-sass', get_stylesheet_directory_uri() . '/dist/style.css', _S_VERSION);
+
+	// Main javascript file
+	wp_enqueue_script(_THEME_NAME . '-app-js', get_stylesheet_directory_uri() . '/dist/app.js', _S_VERSION);
+
 
 	wp_enqueue_script( 'wenger-lives-on-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
