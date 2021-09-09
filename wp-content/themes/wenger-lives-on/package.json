@@ -5,6 +5,8 @@
   "main": "webpack.config.js",
   "dependencies": {
     "@babel/polyfill": "^7.11.5",
+    "bulma": "^0.9.3",
+    "jquery": "^3.6.0",
     "puppeteer-core": "^10.2.0",
     "wp-prettier": "^2.2.1-beta-1"
   },

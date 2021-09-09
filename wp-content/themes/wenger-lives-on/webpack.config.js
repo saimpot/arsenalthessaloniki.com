@@ -11,7 +11,9 @@ const entryPoints = {
     // 'app' is the output name, people commonly use 'bundle'
     // you can have more than 1 entry point
     'app': jsPath + '/app.js',
-    'style': assetPath + '/app.scss',
+    'style-home': assetPath + '/app.scss',
+    'style-away': assetPath + '/app-away.scss',
+    'style-third': assetPath + '/app-third.scss'
 };
 
 module.exports = {

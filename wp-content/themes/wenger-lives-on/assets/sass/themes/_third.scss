@@ -1,0 +1,12 @@
+// Update Bulma's global variables
+$grey-dark: rgba(gray, .8);
+$grey-light: rgba(lightgray, .8);
+$primary: rgba(blue, .8);
+$info: lighten($primary, 20%);
+$link: yellow;
+
+// Update some of Bulma's component variables
+$body-background-color: rgba(lightblue, .1);
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;

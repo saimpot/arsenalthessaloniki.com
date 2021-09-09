@@ -146,17 +146,11 @@ function wenger_lives_on_scripts() {
 	wp_style_add_data( 'wenger-lives-on-style', 'rtl', 'replace' );
 
 	// Main css file
-	wp_enqueue_style(_THEME_NAME . '-sass', get_stylesheet_directory_uri() . '/dist/style.css', _S_VERSION);
+	wp_enqueue_style(_THEME_NAME . '-sass', get_stylesheet_directory_uri() . '/dist/style-home.css', _S_VERSION);
 
 	// Main javascript file
 	wp_enqueue_script(_THEME_NAME . '-app-js', get_stylesheet_directory_uri() . '/dist/app.js', _S_VERSION);
-
-
 	wp_enqueue_script( 'wenger-lives-on-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'wenger_lives_on_scripts' );
 
