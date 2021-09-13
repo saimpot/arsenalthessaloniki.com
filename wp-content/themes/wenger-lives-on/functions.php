@@ -1,6 +1,9 @@
 <?php
 const _THEME_NAME = 'wenger-lives-on';
 
+require('inc/cuztom/cuztom.php');
+require('inc/post_types/teams.php');
+
 /**
  * Wenger Lives On functions and definitions
  *
