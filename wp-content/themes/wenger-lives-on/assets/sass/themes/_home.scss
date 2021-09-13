@@ -1,7 +1,9 @@
 // Update Bulma's global variables
 $grey-dark: rgba(gray, .8);
 $grey-light: rgba(lightgray, .8);
-$primary: red;
+$primary: #DB0007;
+$secondary: #063672;
+$third: #9C824A;
 $info: lighten($primary, 20%);
 $link: orange;
 
@@ -10,3 +12,8 @@ $body-background-color: rgba(red, .1);
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
+
+// our vars
+$navbar-bg: #dd1f2a;
+$navbar-link: $secondary;
+$navbar-text: darken(#FFF, 5%);

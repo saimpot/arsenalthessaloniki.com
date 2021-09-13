@@ -1,0 +1,85 @@
+.styled-top-bar {
+  height: 10px;
+  background-color: $secondary;
+}
+
+nav.navbar {
+  color: $navbar-text;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+
+  a {
+    color: $navbar-text;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    &:hover {
+      color: lighten($navbar-link, 20%);
+      background: none;
+    }
+  }
+
+  > .navbar__bg-image {
+    z-index: 1;
+    height: 700px;
+    width: 100%;
+    background-position: center 60%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+
+    > .navbar__bg-overlay {
+      width: 100%;
+      height: 100%;
+      background: rgba($secondary, .4);
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  > .navbar-inner {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    background-color: rgba($navbar-bg, .9);
+    height: 70px;
+
+    > .container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: inherit;
+
+      > .navbar-brand, > .navbar-menu {
+        height: inherit;
+      }
+
+      > .navbar-brand {
+
+        img {
+          max-height: 35px;
+        }
+      }
+
+      > .navbar-menu {
+
+        .navbar-item {
+
+          .cta {
+            background-color: $secondary;
+          }
+        }
+      }
+    }
+  }
+
+  > .navbar-team-rankings {
+    display: flex;
+    flex: 1 0 100%;
+    height: 40px;
+    background: rgba($navbar-text, .6);
+    width: 100%;
+    position: relative;
+    z-index: 3;
+  }
+}
