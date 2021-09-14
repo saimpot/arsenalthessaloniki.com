@@ -10,12 +10,22 @@ nav.navbar {
 
   a {
     color: $navbar-text;
+    font-family: 'cf_asty_probold', sans-serif;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 13px;
 
     &:hover {
       color: lighten($navbar-link, 20%);
       background: none;
+    }
+
+    &.icon-link {
+      height: 28px;
+
+      ion-icon {
+        font-size: 28px;
+      }
     }
   }
 
@@ -57,11 +67,25 @@ nav.navbar {
       > .navbar-brand {
 
         img {
-          max-height: 35px;
+          max-height: 45px;
         }
       }
 
       > .navbar-menu {
+
+        > .navbar-start {
+
+          .navbar-item {
+            &.is-active {
+              color: lighten($primary, 40%);
+              background: rgba(darken($secondary, 10%), .2);
+            }
+          }
+        }
+
+        > .navbar-end {
+
+        }
 
         .navbar-item {
 
@@ -76,10 +100,28 @@ nav.navbar {
   > .navbar-team-rankings {
     display: flex;
     flex: 1 0 100%;
-    height: 40px;
-    background: rgba($navbar-text, .6);
+    height: 50px;
+    background: rgba($navbar-text, .9);
     width: 100%;
     position: relative;
     z-index: 3;
+
+    > .container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+
+      > .team-crest {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          max-height: 30px;
+          width: auto;
+        }
+      }
+    }
   }
 }

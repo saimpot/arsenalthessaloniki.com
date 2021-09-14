@@ -2,7 +2,7 @@
 $grey-dark: rgba(gray, .8);
 $grey-light: rgba(lightgray, .8);
 $primary: #DB0007;
-$secondary: #063672;
+$secondary: lighten(#063672, 8%);
 $third: #9C824A;
 $info: lighten($primary, 20%);
 $link: orange;

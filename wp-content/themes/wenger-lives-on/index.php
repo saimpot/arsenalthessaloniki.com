@@ -13,6 +13,15 @@
  */
 
 get_header();
+$teams_args = [
+	'post_type'      => 'team',
+	'posts_per_page' => - 1,
+	'hide_empty'     => true,
+    'orderby'        => 'position',
+    'order'          => 'ASC'
+];
+$teams = new WP_Query( $teams_args );
+
 ?>
     <div class="styled-top-bar"></div>
     <nav class="navbar" role="navigation" aria-label="main-navigation">
@@ -25,16 +34,43 @@ get_header();
                 </div>
 
                 <div class="navbar-menu">
-                    <div class="navbar-start"><a href="asdf" class="navbar-item">Left link</a></div>
+                    <div class="navbar-start">
+                        <a href="asdf" class="navbar-item is-active">Αρχικη</a>
+                        <a href="asdf" class="navbar-item">Νεα</a>
+                        <a href="asdf" class="navbar-item">Το κλαμπ</a>
+                        <a href="asdf" class="navbar-item">Shop</a>
+                        <a href="asdf" class="navbar-item">Επικοινωνια</a>
+                        <a href="asdf" class="navbar-item">Γινε μελος</a>
+                    </div>
                     <div class="navbar-end">
                         <div class="navbar-item">
-                            <a href="asdf" class="button is-link is-small cta">Gine melos</a>
+                            <a class="icon-link" href="">
+                                <ion-icon name="color-palette-outline"></ion-icon>
+                            </a>
+                        </div>
+                        <div class="navbar-item">
+                            <a class="icon-link" href="">
+                                <ion-icon name="search"></ion-icon>
+                            </a>
+                        </div>
+                        <div class="navbar-item">
+                            <a href="asdf" class="button is-link is-small cta">Γινε Μελος</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="navbar-team-rankings"></div>
+        <div class="navbar-team-rankings">
+            <div class="container">
+                <?php
+                while($teams->have_posts()) {
+	                $teams->the_post();
+                    $attachmentUrl = get_the_post_thumbnail();
+                    echo '<div class="team-crest">'.$attachmentUrl.'</div>';
+                }
+                ?>
+            </div>
+        </div>
         <div class="navbar__bg-image" style="background-image: url(<?php echo get_stylesheet_directory_uri() . '/assets/images/theme-bg.jpg'; ?>);">
             <div class="navbar__bg-overlay"></div>
         </div>
