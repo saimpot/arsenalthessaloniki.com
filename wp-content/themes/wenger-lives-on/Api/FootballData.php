@@ -60,12 +60,15 @@ class FootballData {
 		return json_decode($response);
 	}
 
+	/**
+	 * @throws JsonException
+	 */
 	public function findStandingsByCompetition($id) {
 		$resource = 'competitions/' . $id . '/standings';
 		$response = file_get_contents($this->baseUri . $resource, false,
 			stream_context_create($this->reqPrefs));
 
-		return json_decode($response);
+		return json_decode( $response, true, 512, JSON_THROW_ON_ERROR );
 	}
 
 
